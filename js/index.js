@@ -9,26 +9,22 @@ let livroSalvo = null; // localstorage
 // Função para exibir e ocultar o indicador de carregamento
 function mostrarCarregando() {
     document.getElementById('loading-indicator').style.display = 'block';
-    document.body.style.filter = 'blur(5px)'; // Aplica o desfoque no corpo da página
-    document.querySelector('.container').classList.add('blur'); // Aplica o desfoque no conteúdo da página
-}
+    document.body.style.filter = 'blur(5px)'; 
+    document.querySelector('.container').classList.add('blur'); 
 
 function esconderCarregando() {
     const loadingIndicator = document.getElementById('loading-indicator');
-    loadingIndicator.classList.add('fade-out'); // Aplica animação para desaparecer
+    loadingIndicator.classList.add('fade-out'); 
 
-    // Remove o desfoque após 0.5 segundos
     setTimeout(() => {
         loadingIndicator.style.display = 'none';
         loadingIndicator.classList.remove('fade-out');
-        document.body.style.filter = 'none'; // Remove o desfoque do corpo
+        document.body.style.filter = 'none'; 
         document.querySelector('.container').classList.remove('blur');
-    }, 500); // Duração da animação de fade-out
+    }, 500); 
 }
 
-// Função para buscar o livro na API da Open Library
 if (window.location.pathname === '/index.html') {
-    // Esse código só será executado se estiver na página index.html
     if (formBuscador) {
         formBuscador.addEventListener('submit', (evento) => {
             evento.preventDefault();
@@ -44,8 +40,8 @@ if (window.location.pathname === '/index.html') {
                     .then(response => response.json())
                     .then(data => {
                         if (data.docs.length > 0) {
-                            const livro = data.docs[0]; // Pegando o primeiro livro encontrado
-                            const workKey = livro.key; // Obtendo o workKey para buscar as edições
+                            const livro = data.docs[0]; 
+                            const workKey = livro.key; 
 
                             document.getElementById('titulo-livro').textContent = livro.title || 'Título não encontrado';
                             document.getElementById('autor-livro').textContent = livro.author_name ? livro.author_name.join(', ') : 'Autor não encontrado';
@@ -73,13 +69,13 @@ if (window.location.pathname === '/index.html') {
     }
 }
 
-// Função para buscar as edições detalhadas do livro
+// Função para buscar as edições
 function buscarEdições(workKey) {
     fetch(`https://openlibrary.org${workKey}/editions.json`)
         .then(response => response.json())
         .then(data => {
             if (data.entries.length > 0) {
-                const livroDetalhado = data.entries[0]; // Pegando a primeira edição
+                const livroDetalhado = data.entries[0]; 
 
                 console.log(livroDetalhado);
 
@@ -91,7 +87,6 @@ function buscarEdições(workKey) {
                 const capaUrl = livroDetalhado.covers ? `https://covers.openlibrary.org/b/id/${livroDetalhado.covers[0]}-L.jpg` : 'img/capa-livro-nao-encontrado.png';
                 document.getElementById('capa-livro').src = capaUrl;
 
-                // Marca que a busca foi realizada
                 buscadorUsado = true;
             } else {
                 //alert('Nenhuma edição encontrada.');
@@ -104,7 +99,6 @@ function buscarEdições(workKey) {
 }
 
 if (window.location.pathname === '/index.html') {
-    // Manipulador do botão "Sem Histórico" (Recarrega a página)
     botaoSemHistorico.onclick = () => {
         setTimeout(() => {
             location.reload();
@@ -113,20 +107,19 @@ if (window.location.pathname === '/index.html') {
 }
 
 if (window.location.pathname === '/index.html') {
-    // Manipulador do botão "Com Histórico" (Salva as informações no localStorage)
+
     botaoComHistorico.onclick = () => {
         if (buscadorUsado && livroSalvo) {
-            // Recupera o histórico de livros salvo no localStorage
+            
             let livrosHistorico = JSON.parse(localStorage.getItem('livrosHistorico')) || [];
 
-            // Verifica se o livro já está no histórico
+           
             const livroExistente = livrosHistorico.some(livro => livro.key === livroSalvo.key); // Compara pelo 'key' do livro, que é único
 
             if (!livroExistente) {
-                // Se o livro não estiver no histórico, adiciona o livro ao histórico
+                
                 livrosHistorico.push(livroSalvo);
 
-                // Atualiza o localStorage com o novo histórico
                 localStorage.setItem('livrosHistorico', JSON.stringify(livrosHistorico));
 
                 mostrarMensagem(1);
@@ -199,15 +192,14 @@ const botaoSidebarMobile = document.querySelector('.imagem-botao');
 const sidebarItensMobile = document.querySelector('.sidebar-mobile-itens');
 let clicks = 0;
 
-// Verifica a URL da página
+
 const currentPage = window.location.pathname;
 
-// Função para marcar o item ativo
 function marcarItemAtivo() {
     const buscarItem = document.getElementById('buscar-item');
     const historicoItem = document.getElementById('historico-item');
 
-    // Verifica se estamos na página 'index.html' ou 'historico.html'
+    
     if (currentPage.includes('index.html') && buscarItem) {
         buscarItem.classList.add('active');
     } else if (currentPage.includes('historico.html') && historicoItem) {
@@ -215,7 +207,7 @@ function marcarItemAtivo() {
     }
 }
 
-// Manipulador do clique na sidebar (botão de abrir)
+
 botaoSidebarMobile.addEventListener('click', function () {
     clicks++;
 
@@ -231,7 +223,7 @@ botaoSidebarMobile.addEventListener('click', function () {
         </div>
         `;
         
-        // Agora que os itens foram inseridos no DOM, podemos marcar o item ativo
+        
         marcarItemAtivo();
     } else if (clicks == 2) {
         sidebarItensMobile.innerHTML = ``;

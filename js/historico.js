@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// Função para exibir o modal de confirmação
+
 function mostrarModalConfirmacao(acaoConfirmar, acaoCancelar) {
     confirmationModal.style.visibility = "visible"; // Torna o modal visível
     confirmationModal.style.opacity = "1"; // Torna o modal opaco
@@ -73,13 +73,12 @@ function mostrarModalConfirmacao(acaoConfirmar, acaoCancelar) {
     };
 }
 
-// Função para fechar o modal
+
 function fecharModal() {
-    confirmationModal.style.visibility = "hidden"; // Torna o modal invisível
-    confirmationModal.style.opacity = "0"; // Torna o modal transparente
+    confirmationModal.style.visibility = "hidden"; 
+    confirmationModal.style.opacity = "0"; 
 }
 
-// Função do botão "Limpar Histórico"
 botaoLimparHistorico.onclick = () => {
     mostrarModalConfirmacao(
         function() {
