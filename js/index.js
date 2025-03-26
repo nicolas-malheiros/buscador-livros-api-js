@@ -11,6 +11,7 @@ function mostrarCarregando() {
     document.getElementById('loading-indicator').style.display = 'block';
     document.body.style.filter = 'blur(5px)'; 
     document.querySelector('.container').classList.add('blur'); 
+}
 
 function esconderCarregando() {
     const loadingIndicator = document.getElementById('loading-indicator');
@@ -230,4 +231,6 @@ botaoSidebarMobile.addEventListener('click', function () {
         clicks = 0;
     }
 });
+
+
 
