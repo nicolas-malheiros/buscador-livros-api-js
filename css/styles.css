@@ -1,0 +1,627 @@
+/* Resetando margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral do body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    height: 100vh;
+    flex-direction: column; /* Faz o conteúdo empilhar verticalmente */
+}
+
+/* Container para a sidebar e o conteúdo principal */
+.container {
+    display: flex;
+    flex: 1;
+    flex-direction: row; /* Sidebar e conteúdo principal lado a lado */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-item img.sidebar-icon {
+    border-radius: 50%;
+}
+
+.sidebar-item a img{
+    margin-block-end: 110px;
+}
+
+.sidebar-item a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-item a:hover {
+    color: #4CAF50;
+}
+
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column; 
+}
+
+
+.mensagem-inicial {
+    background-color: #666;
+    width: 80%;
+    height: auto;  
+    margin: 0 auto 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px; 
+}
+
+
+.top-content h1, .top-content p {
+    color: white;
+}
+
+
+.pai {
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    overflow: hidden; 
+}
+
+
+.filho1, .filho2 {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    height: 80vh; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.filho1 {
+    flex: 4;
+    overflow-y: auto; 
+}
+
+.filho2 {
+    flex: 3;
+    overflow-y: auto;
+}
+
+
+
+.sidebar-item.bloco a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: #747574;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+
+.sidebar-item.bloco a:hover {
+    background-color: #9ca19d;
+}
+
+.titulo-principal-livros{
+        background-color: #686363;
+        color: white;
+        border-radius: 10px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+
+.buscador-container {
+    display: flex; 
+    justify-content: space-between; 
+    width: 100%;
+    max-width: 700px; 
+    margin: 20px auto;
+    margin-top: 50px;
+}
+
+
+.input-buscador {
+    flex: 1; 
+    padding: 23px; 
+    font-size: 18px; 
+    border: 4px solid #ccc;
+    border-radius: 5px;
+    width: 80%; 
+}
+
+
+.btn-buscador {
+    padding: 15px 30px; 
+    background-color: #878f87;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.btn-buscador:hover {
+    background-color: #9ba89b;
+}
+
+.capa {
+    border: 2px solid;
+    width: 60%; 
+    margin: auto;
+    height: auto; 
+    margin-top: 100px;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.capa img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease; 
+}
+
+.capa img:hover {
+    opacity: 0.3; /* Opacidade reduzida ao passar o mouse */
+    transform: scale(1.05); /* Aumenta um pouco a imagem para dar um efeito de zoom */
+    filter: brightness(1.2); /* Brilho um pouco mais forte quando estiver sobre a imagem */
+}
+
+/* Animação suave de troca de imagem */
+.capa img {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.detalhes-container {
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.detalhes-container h3 {
+    background-color: rgb(119, 108, 108); 
+    display: inline-block;  
+    padding: 5px 10px;      
+    border-radius: 8px;    
+    color: white;        
+    border: 2px solid rgb(228, 206, 206);  
+    width: auto;            
+}
+
+.detalhes-container div {
+    display: flex;
+    gap: 7px;
+    align-items: center;            
+}
+
+.resposta {
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: rgb(61, 56, 56);  
+    border: 2px solid rgb(216, 181, 181);  
+    color: white;    
+    font-size: 18px;
+}
+
+
+.guardar-historico{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 40px;
+    height: 60%;
+}
+
+.guardar-historico h3{
+    text-align: center;
+    font-size: 30px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #666;
+}
+
+#btn-sim {
+    color: white;
+    border: none;
+}
+
+#btn-nao {
+    color: white;
+    border: none;
+}
+
+#btn-sim:hover{
+    background-color: rgb(116, 204, 116);
+    color: black;
+    padding: 13px 22px;
+    font-size: 20px;
+    transition: all 0.5s;;
+}
+
+#btn-nao:hover{
+    background-color: rgb(221, 115, 111);
+    color: black;
+    padding: 13px 22px;
+    font-size: 20px;
+    transition: all 0.5s;;
+}
+
+/* resumo não utilizado 
+
+.texto-resumo {
+    border: 2px solid black;
+    border-radius: 8px;
+    height: 85%;
+    overflow-y: auto; 
+}
+
+*/
+
+/* Definindo a área de desfoque */
+/* Definindo a área de desfoque */
+.container {
+    position: relative;
+}
+
+/* Indicador de carregamento */
+#loading-indicator {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 9999; /* Fica acima de todo o conteúdo */
+    display: none; /* Inicialmente invisível */
+}
+
+/* Animação do spinner */
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Desfoque para o conteúdo da página */
+.container.blur {
+    filter: blur(5px); /* Aplica o desfoque */
+}
+
+/* Animação de desaparecimento suave do indicador */
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+#loading-indicator.fade-out {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+/* Efeito de transição suave no desfoque do conteúdo */
+body {
+    transition: filter 0.5s ease-out;
+}
+
+.hidden {
+    display: none;
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transição suave */
+    transform: translateY(-20px); /* Inicialmente, um pequeno deslocamento */
+}
+
+.mostrar {
+    display: flex;
+    opacity: 1; /* Fica totalmente visível */
+    transform: translateY(0); /* Volta à posição original */
+}
+
+
+
+.sidebar-mobile{
+    display: none;
+}
+
+.botoes-historico{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+/* ======================== responsividade */
+
+
+
+@media screen and (max-width: 878px){
+    
+    .sidebar{
+        display: none;
+    }
+
+    .main-content{
+        padding: 0;
+    }
+
+
+    
+    .inicio-mobile{
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        padding: 15px;
+    }
+
+    .sidebar-mobile{
+        display: block;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .sidebar-mobile img{
+        width: 50px;
+        border-radius: 10px;
+
+    }
+
+    .mensagem-inicial{
+        margin-top: 0px;
+        margin-left: 30px;
+        padding: 7px;
+    }
+
+    .mensagem-inicial h1{
+        font-size: 18px;
+    }
+
+    .mensagem-inicial p{
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+    .pai{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .titulo-principal-livros{
+        padding: 30px;
+    }
+
+    .buscador-container{
+        margin: 0;
+        margin-top: 10px;
+    }
+
+    .input-buscador{
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .btn-buscador{
+        margin-left: 0px;
+        font-size: 13px;
+    }
+    
+    .capa{
+        width: 100%;
+    }
+
+    .filho2{
+        overflow:visible;
+    }
+
+    .detalhes-container{
+        margin: 0px;
+    }
+
+    .detalhes-container h3{
+        font-size: 15px;
+    }
+
+    .resposta{
+        font-size: 14px;
+    }
+
+    .guardar-historico h3{
+        font-size: 18px;
+        font-style: italic;
+    }
+
+    .botoes-historico{
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 300px;
+    }
+
+    
+    #mensagem {
+        width: 100px;
+        display: flex; /* Torna a div visível */
+        position: fixed; /* Fixa a div na tela */
+        bottom: 10px; /* Coloca a div no fundo da tela */
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translateX(-50%); /* Ajusta para garantir que a div fique centralizada */
+        width: 90%; 
+    }
+    
+    #mensagem h3{
+        font-size: 15px;
+    }
+
+    #resumo-livro {
+        max-height: 200px; 
+        overflow-y: auto;   
+        padding: 10px;      
+        border: 1px solid #ccc;  
+        width: 100%;       
+        box-sizing: border-box; 
+    }
+
+    .sidebar-juntos-mobile{
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Estilos para a sidebar */
+#sidebar-mobile-itens {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #000000;
+    padding: 20px;
+    width: 125px; /* Tamanho da sidebar */
+    border-radius: 10px;
+    gap: 20px;
+    box-shadow: 0 4px 8px rgba(231, 222, 222, 0.2); /* Sombrinha para dar profundidade */
+}
+
+.sidebar-mobile-itens a{
+    text-decoration: none;
+}
+
+/* Estilo para cada item da sidebar */
+.sidebar-item {
+    width: 100%;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Espaçamento entre os itens */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-item a{
+    font-style: none;
+}
+
+.sidebar-mobile-itens a span {
+    color: white;
+}
+
+.sidebar-item.active {
+    background-color: #495a74; /* Fundo mais escuro para indicar que está ativo */
+    color: #FFD700; /* Cor dourada para o texto quando ativo */
+}
+
+/* Efeito de hover para os itens */
+.sidebar-item:hover {
+    background-color: #39475c;
+    color: #FFD700; /* Cor dourada quando passar o mouse */
+}
+
+.pai.historico{
+    flex-direction: row;
+    background-color: #f2f2f2;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.pai.historico h2{
+    font-size: 22px;
+}
+
+.pai.historico button{
+    padding: 7px;
+    font-size: 15px;
+    background-color: rgb(233, 100, 100);
+    border: 2px red;
+}
+
+.pai.historico button:hover{
+    background-color: #e60000;
+    padding: 7px;
+    font-size: 15px;
+    transition:none;
+}
+
+
+#btn-sim:hover{
+    background-color: rgb(116, 204, 116);
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: all 0.5s;
+}
+
+#btn-nao:hover{
+    background-color: rgb(221, 115, 111);
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: all 0.5s;;
+}
+    
+
+}

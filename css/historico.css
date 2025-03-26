@@ -1,0 +1,144 @@
+.historico-livros {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 40px;
+    margin: 20px 40px;
+}
+
+.lista-livros {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+    align-items: center;
+    width: 300px; 
+    text-align: center; 
+}
+
+.nenhum-livro{
+    font-size: 25px;
+    font-style: italic;
+}
+
+.lista-livros a {
+    text-decoration: none; 
+    color: black; 
+    font-size: 20px;
+    transition: font-size 0.3s ease; 
+}
+
+.livro-capa {
+    width: 250px; 
+    height: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.lista-livros a:hover .livro-capa {
+    transform: rotate(5deg) scale(1.1); 
+    box-shadow: 0 0 15px 5px rgba(245, 236, 185, 0.7); 
+}
+
+.lista-livros a:hover h3 {
+    font-size: 25px; 
+    margin-block-end: 30px;
+}
+
+.remover-livro {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.remover-livro:hover {
+    background-color: #e60000;
+}
+
+.pai{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pai button{
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #eb5b5b;
+    color: white;
+}
+
+.pai button:hover{
+    background-color: #e60000;
+    padding: 22px;
+    font-size: 21.5px;
+    cursor: pointer;
+    transition: padding 0.5s ease, background-color 0.5s ease, font-size 0.5s ease;
+}
+
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex; /* Usado para centralizar o modal */
+    justify-content: center;
+    align-items: center;
+    visibility: hidden; /* Inicialmente invisível */
+    opacity: 0; /* Inicialmente invisível */
+    transition: visibility 0s, opacity 0.3s ease; /* Faz a transição suave de opacidade */
+    z-index: 1000; /* Fica acima de outros conteúdos */
+}
+
+/* Fundo de overlay */
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparente para bloquear interações */
+    z-index: 500; /* Fica abaixo do conteúdo do modal */
+}
+
+/* Estilo do conteúdo do modal */
+.modal-content {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    z-index: 1000; /* Fica acima do fundo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px; /* Tamanho do modal */
+    position: relative;
+}
+
+/* Botões do modal */
+button#confirmYes, button#confirmNo {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Cor do botão "Não" */
+button#confirmNo {
+    background-color: #FF5733;
+}
+
+/* Efeito de hover nos botões */
+button#confirmYes:hover {
+    background-color: #0056b3;
+}
+
+button#confirmNo:hover {
+    background-color: #c13a2f;
+}

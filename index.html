@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual</title>
+    <link rel="icon" href="img/imagem-icone.png" type="image/png">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/index.js" defer></script>
+</head>
+<div id="loading-indicator" style="display: none;">
+    <div class="spinner"></div>
+    <p>Carregando...</p>
+</div>
+<body>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-item">
+                <a href="index.html" class="imagem-icone">
+                    <img src="img/imagem-icone.png" alt="Ícone" class="sidebar-icon" width="70%" height="100%">
+                </a>
+            </div>
+            <div class="sidebar-item bloco">
+                <a href="index.html">
+                    <label for="buscador">Buscador de Livros</label>
+                </a>
+            </div>
+            <div class="sidebar-item bloco">
+                <a href="historico.html">
+                    <span>Histórico</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Conteúdo principal -->
+        <div class="main-content">
+            <div class="inicio-mobile">
+            <div class="sidebar-juntos-mobile">
+            <div class="sidebar-mobile">
+                <img class="imagem-botao" src="img/icone-sidebar.avif" alt="">
+            </div>
+            <div class="sidebar-mobile-itens">
+                <!-- itens -->
+            </div>
+            </div>
+            <div class="mensagem-inicial">
+                <div class="top-content">
+                    <h1>Bem-vindo à Biblioteca Virtual</h1>
+                    <p>Encontre seus livros e salve no histórico para ler depois!</p>
+                    <p>Desenvolvido por: Nicolas Daniel Malheiros</p>
+                </div>
+            </div>
+        </div>
+
+            <div class="hidden" id="mensagem"style="justify-content: center; text-align: center; width: fit-content; margin: 0 auto;">
+            </div>
+            
+
+            <!-- Novo conteúdo com a div pai e filhos -->
+            <div class="pai">
+                <div class="filho1">
+                    <h2 class="titulo-principal-livros"> Buscador de Livros </h2>
+
+                    <form class="buscar-filme" action="">
+                        <div class="buscador-container">
+                            <input type="text" id="buscador" placeholder="Digite o nome do livro..." class="input-buscador">
+                            <button class="btn-buscador" type="submit">Buscar</button>
+                        </div>
+                    </form>
+
+                    
+                    <div class="capa">
+                        <img id="capa-livro" src="img/capa-livro-esperando.png"Capa do livro" style="max-width: 100%;">
+                    </div>
+                </div>
+                <div class="filho2">
+                    <h2 class="titulo-principal-livros"> Detalhes do Livro </h2>
+
+                    <div class="detalhes-container">
+                        <div>
+                            <h3>TITULO: </h3>
+                            <div id="titulo-livro" class="resposta"></div>
+                        </div>
+                        <div>
+                            <h3>AUTOR: </h3>
+                            <div id="autor-livro" class="resposta"></div>
+                        </div>
+                        <div>
+                            <h3>EDITORA: </h3>
+                            <div id="editora-livro" class="resposta"></div>
+                        </div>
+                        <div>
+                            <h3>ANO DE PUBLICAÇÃO: </h3>
+                            <div id="ano-livro" class="resposta"></div>
+                        </div>
+                        <div>
+                            <h3>RESUMO: </h3>
+                            <div id="resumo-livro" class="resposta"></div>
+                        </div>
+                    </div>
+
+                    <div class="guardar-historico">
+                        <h3>VOCÊ DESEJA GUARDAR O LIVRO BUSCADO PARA SEU HISTÓRICO?</h3>
+                        
+                        <div class="botoes-historico">
+                            <button id="btn-sim" class="btn">✔</button>
+                            <button id="btn-nao" class="btn">✘</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual - Historico</title>
+    <link rel="icon" href="img/imagem-icone.png" type="image/png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/historico.css">
+    <script src="js/index.js" defer></script>
+    <script src="js/historico.js" defer></script>
+
+</head>
+<body>
+
+    
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-item">
+                <a href="index.html" class="imagem-icone">
+                    <img src="img/imagem-icone.png" alt="Ícone" class="sidebar-icon" width="70%" height="100%">
+                </a>
+            </div>
+            <div class="sidebar-item bloco">
+                <a href="index.html">
+                    <label for="buscador">Buscador de Livros</label>
+                </a>
+            </div>
+            <div class="sidebar-item bloco">
+                <a href="historico.html">
+                    <span>Histórico</span>
+                </a>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="inicio-mobile">
+                <div class="sidebar-juntos-mobile">
+                <div class="sidebar-mobile">
+                    <img class="imagem-botao" src="img/icone-sidebar.avif" alt="">
+                </div>
+                <div class="sidebar-mobile-itens">
+                    <!-- itens -->
+                </div>
+                </div>
+                <div class="mensagem-inicial">
+                    <div class="top-content">
+                        <h1>Bem-vindo à Biblioteca Virtual</h1>
+                        <p>Encontre seus livros e salve no histórico para ler depois!</p>
+                        <p>Desenvolvido por: Nicolas Daniel Malheiros</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pai historico">
+                <h2>Histórico de Livros Pesquisados:</h2>
+                <button class="limpar-historico">Limpar Histórico</button>
+            </div>
+
+            <div id="confirmationModal" class="modal">
+                <!-- Fundo de overlay -->
+                <div class="modal-overlay"></div>
+            
+                <!-- Conteúdo do modal -->
+                <div class="modal-content">
+                    <p>Tem certeza que deseja continuar?</p>
+                    <button id="confirmYes">Sim</button>
+                    <button id="confirmNo">Não</button>
+                </div>
+            </div>
+            
+
+            
+            <div class="historico-livros">
+                <!-- aqui fica o histórico -->
+            </div>
+            
+        </div>
+</body>
+</html>

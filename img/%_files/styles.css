@@ -1,0 +1,179 @@
+/* Resetando margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral do body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    height: 100vh;
+    flex-direction: column; /* Faz o conteúdo empilhar verticalmente */
+}
+
+/* Container para a sidebar e o conteúdo principal */
+.container {
+    display: flex;
+    flex: 1;
+    flex-direction: row; /* Sidebar e conteúdo principal lado a lado */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-item img.sidebar-icon {
+    border-radius: 50%;
+}
+
+.sidebar-item a img{
+    margin-block-end: 110px;
+}
+
+.sidebar-item a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-item a:hover {
+    color: #4CAF50;
+}
+
+/* Main content (content area) */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column; /* Adiciona flex-direction column para empilhar as divs */
+}
+
+/* Mensagem inicial */
+.mensagem-inicial {
+    background-color: #666;
+    width: 80%;
+    height: auto;  /* Ajuste a altura para se adaptar ao conteúdo */
+    margin: 0 auto 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px; 
+}
+
+/* Top content */
+.top-content h1, .top-content p {
+    color: white;
+}
+
+/* Div pai para conter os filhos abaixo da mensagem inicial */
+.pai {
+    width: 80%; /* Define a largura da div pai */
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row; /* Coloca filho1 e filho2 lado a lado */
+    gap: 20px; /* Espaço entre os filhos */
+}
+
+/* Divs filhas (filho1 e filho2) */
+.filho1, .filho2 {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    height: 80vh; /* Ajuste a altura conforme necessário */
+}
+
+.filho1{
+    flex: 4;
+}
+
+.filho2{
+    flex: 3;
+}
+
+/* Sidebar item estilo bloco */
+.sidebar-item.bloco a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: #747574;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito de hover para sidebar */
+.sidebar-item.bloco a:hover {
+    background-color: #9ca19d;
+}
+
+.titulo-buscador-livros{
+        background-color: #686363;
+        color: white;
+        border-radius: 10px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+/* Container do buscador */
+.buscador-container {
+    display: flex; /* Alinha o input e o botão lado a lado */
+    justify-content: space-between; /* Espaço entre o input e o botão */
+    width: 100%; /* Pode ajustar a largura conforme necessário */
+    max-width: 500px; /* Define um tamanho máximo para o campo de busca */
+    margin: 20px auto; /* Centraliza o buscador */
+}
+
+/* Estilo do input */
+.input-buscador {
+    flex: 1; /* O input ocupa todo o espaço disponível */
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo do botão */
+.btn-buscador {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: -5px; 
+}
+
+.btn-buscador:hover {
+    background-color: #45a049;
+}
